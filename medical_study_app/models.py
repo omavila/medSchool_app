@@ -10,6 +10,9 @@ class Client(models.Model):
     def __str__(self):
         return self.name
     
+   # def get_absolute_url(self):
+   #     return reverse('client-detail', args=[str(self.id)])
+    
 class Notegroup(models.Model):
     title = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
@@ -20,8 +23,8 @@ class Notegroup(models.Model):
     def __str__(self):
         return self.title
     
-    def get_absolute_url(self):
-        return reverse('notegroup-detail', args=[str(self.id)])
+  #  def get_absolute_url(self):
+   #     return reverse('notegroup-detail', args=[str(self.id)])
     
 class Notecard(models.Model):
     
@@ -33,6 +36,6 @@ class Notecard(models.Model):
     def __str__(self):
         return self.title
     
-    def get_absolute_url(self):
-        return reverse('notecard-detail', args=[str(self.id)])
+   # def get_absolute_url(self):
+    #    return reverse('notecard-detail', args=[str(self.id)])
     
