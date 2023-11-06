@@ -1,0 +1,13 @@
+{% extends 'medical_study_app/base_template.html' %} {% block content %}
+<h1>Note Group List</h1>
+{% if notegroup_list %}
+<ul>
+  {% for notegroup in notegroup_list %}
+  <li>
+    <a href="{{ notegroup.get_absolute_url }}">{{ notegroup.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>There are no groups registered.</p>
+{% endif %} {% endblock %}

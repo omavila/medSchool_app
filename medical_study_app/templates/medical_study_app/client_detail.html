@@ -1,0 +1,60 @@
+{% extends 'medical_study_app/base_template.html' %} {% block content %}
+<h1>Account Name: {{ client.name }}</h1>
+
+<p><strong>Email:</strong> {{ client.email }}</p>
+<div>
+  <a
+    href="#group"
+    class="btn btn-info"
+    style="margin: 5px"
+    data-bs-toggle="collapse"
+    >Note Groups</a
+  >
+  <div id="group" class="collapse">
+    {% if notegroups %}
+
+    <div>
+      {% for notegroup in notegroups %}
+      <a href="{{ notegroup.get_absolute_url }}">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><strong>{{ notegroup.title }}</strong></h5>
+            <p class="card-title">{{ notegroup.description }}</p>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    {% endif %}
+  </div>
+</div>
+
+<div>
+  <a
+    href="#card"
+    class="btn btn-info"
+    style="margin: 5px"
+    data-bs-toggle="collapse"
+    >Note Cards</a
+  >
+  <div id="card" class="collapse">
+    {% if notecards %}
+
+    <div>
+      {% for notecard in notecards %}
+      <a href="{{ notecard.get_absolute_url }}">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><strong>{{ notecard.title }}</strong></h5>
+            <p class="card-title">{{ notecard.definition }}</p>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'medical_study_app'
+    'medical_study_app',
+
+    'bootstrap5',
 ]
 
 AUTHENTICATION_BACKENDS = [

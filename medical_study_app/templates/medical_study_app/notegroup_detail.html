@@ -1,0 +1,29 @@
+{% extends 'medical_study_app/base_template.html' %} {% block content %}
+<h1>Note Group Title: {{ notegroup.title }}</h1>
+
+<p><strong>Creator:</strong> {{ notegroup.client.name }}</p>
+<p><strong>Description:</strong> {{ notegroup.description }}</p>
+
+<p>
+  <h2>Note Cards</h2>
+
+  {% if notecards %}
+  
+  <div>
+    {% for notecard in notecards %}
+    <a href="{{ notecard.get_absolute_url }}">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><strong>{{ notecard.title }}</strong></h5>
+                <p class="card-title">{{ notecard.definition }}</p>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+
+
+  {% endif %}
+
+  {% endblock %}
+</p>
