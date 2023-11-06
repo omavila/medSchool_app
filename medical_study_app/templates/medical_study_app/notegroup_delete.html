@@ -1,0 +1,14 @@
+{% extends 'medical_study_app/base_template.html' %} {% block content %}
+<p>Are you sure you want to delete"{{ notegroup.title }}"?</p>
+<form method="POST">
+  {% csrf_token %}
+  <a
+    class="btn btn-primary"
+    href="{% url 'client-detail' notegroup.client.pk %}"
+    role="button"
+    >Cancel</a
+  >
+  <input class="btn btn-primary" type="submit" name="Submit" />
+</form>
+
+{% endblock %}
