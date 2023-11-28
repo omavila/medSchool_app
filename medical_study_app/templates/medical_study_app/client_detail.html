@@ -10,6 +10,12 @@
     data-bs-toggle="collapse"
     >Note Groups</a
   >
+  <a
+    href="{{client.id}}/create_notegroup/"
+    class="btn btn-info"
+    style="margin: 5px"
+    >New Note Groups</a
+  >
 
   <div id="group" class="collapse">
     {% if notegroups %}
@@ -21,6 +27,12 @@
           <div class="card-body">
             <h5 class="card-title"><strong>{{ notegroup.title }}</strong></h5>
             <p class="card-title">{{ notegroup.description }}</p>
+            <a
+              href="{{client.id}}/update_notegroup/{{notegroup.id}}"
+              class="btn btn-info"
+              style="margin: 5px"
+              >Update Note Groups</a
+            >
           </div>
         </div>
       </a>

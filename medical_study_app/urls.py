@@ -1,5 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+
 
 urlpatterns = [
 
@@ -12,4 +13,9 @@ path('client/<int:pk>', views.ClientDetailView.as_view(), name= 'client-detail')
 path('client/<int:client_id>/create_notegroup/', views.createNotegroup, name='create_notegroup'),
 path('client/<int:client_id>/delete_notegroup/<int:notegroup_id>/', views.deleteNotegroup, name='delete_notegroup'),
 path('client/<int:client_id>/update_notegroup/<int:notegroup_id>/', views.updateNotegroup, name='update_notegroup'),
+
+path('accounts/', include('django.contrib.auth.urls')),
+path('accounts/register/', views.registerPage, name = 'register_page'),
+path('user/', views.userPage, name='user_page'),
+#path('accounts/profile/', views.index()),
 ]

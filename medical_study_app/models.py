@@ -1,11 +1,13 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 class Client(models.Model):
 
     name = models.CharField(max_length=200)
     email = models.CharField("Email: ", max_length=200)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null= True)
     
     def __str__(self):
         return self.name
